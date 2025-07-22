@@ -10,9 +10,9 @@ HTML = '''
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Baby Name Pro</title>
+    <title>Baby Name Generator</title>
     <script src="https://unpkg.com/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
-    <audio id="puffSound" src="/static/puff.mp3" preload="auto"></audio>
+    <audio id="puffSound" src="puff.mp3" preload="auto"></audio>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(120deg, #e0f7fa 0%, #f1f8e9 100%); margin: 0; padding: 0; }
         #tsparticles { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 100; pointer-events: none; }
@@ -98,7 +98,7 @@ HTML = '''
         <div class="result-3d" id="result" style="display:none;"></div>
     </div>
     <footer>
-        &copy; 2025 BabyNamePro | Designed with ❤️ for new parents
+        &copy; 2025 BabyNamePro | Designed with ❤️ for new parents By Govind Bharadwaj
     </footer>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -178,7 +178,7 @@ HTML = '''
         let flowerRainActive = false;
         let flowerRainTimeout = null;
         let flowerRainInterval = null;
-        window.startFlowerRain = function(durationMs = 2000) {
+        window.startFlowerRain = function(durationMs = 1000) {
             // Always destroy and reload, then add particles only after new instance is ready
             let instance = tsParticles.dom()[0];
             if (!instance) instance = tsParticles.domItem(0);
@@ -189,7 +189,7 @@ HTML = '''
                     "shape": {
                         "type": "image",
                         "image": [
-                            { "src": "/static/Phool.jpg", "width": 48, "height": 48 }
+                            { "src": "Phool.jpg", "width": 48, "height": 48 }
                         ]
                     },
                     "size": { "value": 32 },
@@ -202,7 +202,7 @@ HTML = '''
                 "detectRetina": true
             }).then(newInstance => {
                 // Add 10 flower images from just below the header
-                const flowerImage = '/static/Phool.jpg';
+                const flowerImage = 'Phool.jpg';
                 const manualParticles = Array.from({length: 10}, () => ({
                     position: { x: Math.random() * window.innerWidth, y: 64 },
                     size: { value: 20 },
@@ -225,7 +225,7 @@ HTML = '''
                 "shape": {
                     "type": "image",
                     "image": [
-                        { "src": "/static/Phool.jpg", "width": 48, "height": 48 }
+                        { "src": "Phool.jpg", "width": 48, "height": 48 }
                     ]
                 },
                 "size": { "value": 32 },
@@ -241,7 +241,7 @@ HTML = '''
             window.tsparticlesLoaded = true;
             // Debug: confirm image loaded
             const img = new window.Image();
-            img.src = '/static/Phool.jpg';
+            img.src = 'Phool.jpg';
             img.onload = () => console.log('Loaded:', img.src);
             img.onerror = () => console.error('Could not load:', img.src);
             // Step 2: Kid Name button
